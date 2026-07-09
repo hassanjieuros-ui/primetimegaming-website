@@ -32,23 +32,32 @@
       display: block;
       min-height: 100vh;
       overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(57,255,20,.18), transparent 34%),
+        radial-gradient(circle at 50% 82%, rgba(57,255,20,.09), transparent 42%),
+        linear-gradient(90deg, #000 0%, #020902 18%, #000 50%, #020902 82%, #000 100%);
     }
 
     .page {
       position: relative;
-      width: 100%;
-      max-width: none;
-      margin: 0;
+      width: min(100%, 1365px);
+      max-width: 1365px;
+      margin: 0 auto;
       background: #000;
-      box-shadow: 0 0 90px rgba(57, 255, 20, 0.16);
+      box-shadow:
+        0 0 80px rgba(57, 255, 20, 0.15),
+        0 0 180px rgba(57, 255, 20, 0.09);
     }
 
-    /* Full-bleed mode: the approved art scales to the browser width instead of sitting in a centered 1024px column. */
+    /* Balanced website mode:
+       - wider than the first centered version
+       - not blown up full-bleed across ultrawide/desktop monitors
+       - scales cleanly on tablets and phones */
 
     .approved-art {
       display: block;
       width: 100%;
-      max-width: none;
+      max-width: 1365px;
       height: auto;
       user-select: none;
       -webkit-user-drag: none;
@@ -111,12 +120,10 @@
       }
     }
 
-    @media (min-width: 1025px) {
-      body {
-        background:
-          radial-gradient(circle at 50% 12%, rgba(57,255,20,.12), transparent 34%),
-          radial-gradient(circle at 50% 90%, rgba(57,255,20,.07), transparent 38%),
-          #000;
+    @media (min-width: 1500px) {
+      .page {
+        border-left: 1px solid rgba(57,255,20,.16);
+        border-right: 1px solid rgba(57,255,20,.16);
       }
     }
 
