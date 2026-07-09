@@ -3,32 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prime Time Gaming | Events & Tournaments</title>
-  <meta name="description" content="Prime Time Gaming events, tournaments, community nights, and competitive gaming experiences are coming soon." />
+  <title>Prime Time Gaming | Coming Soon</title>
+  <meta name="description" content="Prime Time Gaming events, tournaments, rankings, and community hub coming soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050807;
-      --panel: rgba(10, 18, 15, 0.74);
-      --green: #39FF14;
-      --green-soft: rgba(57, 255, 20, 0.22);
-      --text: #f3f7f2;
-      --muted: #a8b5a8;
-      --silver: #cfd6d1;
+      --green: #39ff14;
+      --green-2: #8cff5e;
+      --green-dim: rgba(57, 255, 20, 0.24);
+      --green-faint: rgba(57, 255, 20, 0.10);
+      --bg: #020403;
+      --panel: rgba(2, 10, 7, 0.72);
+      --panel-2: rgba(7, 17, 13, 0.82);
+      --white: #f4fff1;
+      --muted: #b9c8b7;
+      --muted-2: #7f907b;
+      --line: rgba(57, 255, 20, 0.34);
+      --silver-1: #ffffff;
+      --silver-2: #d7ddd9;
+      --silver-3: #7c8881;
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 50% 20%, rgba(57, 255, 20, 0.18), transparent 28%),
-        linear-gradient(135deg, #020403 0%, #07110d 45%, #020403 100%);
+      color: var(--white);
+      font-family: Rajdhani, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #000;
       overflow-x: hidden;
     }
 
@@ -36,188 +43,759 @@
       content: "";
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(57, 255, 20, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57, 255, 20, 0.07) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
+      z-index: -5;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(57,255,20,.22), transparent 24%),
+        radial-gradient(circle at 16% 22%, rgba(57,255,20,.14), transparent 17%),
+        radial-gradient(circle at 82% 26%, rgba(57,255,20,.12), transparent 20%),
+        linear-gradient(180deg, #030806 0%, #020403 40%, #000 100%);
+    }
+
+    /* Futuristic city silhouette */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      opacity: .92;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.95), rgba(0,0,0,.10) 56%, rgba(0,0,0,.0) 100%),
+        linear-gradient(90deg, transparent 0 4%, rgba(57,255,20,.08) 4% 4.3%, transparent 4.3% 8%, rgba(255,255,255,.08) 8% 8.25%, transparent 8.25% 13%, rgba(57,255,20,.10) 13% 13.35%, transparent 13.35% 20%, rgba(57,255,20,.08) 20% 20.3%, transparent 20.3% 27%, rgba(255,255,255,.08) 27% 27.2%, transparent 27.2% 34%, rgba(57,255,20,.09) 34% 34.35%, transparent 34.35% 66%, rgba(57,255,20,.08) 66% 66.35%, transparent 66.35% 72%, rgba(255,255,255,.07) 72% 72.25%, transparent 72.25% 78%, rgba(57,255,20,.10) 78% 78.35%, transparent 78.35% 86%, rgba(57,255,20,.09) 86% 86.3%, transparent 86.3% 94%, rgba(255,255,255,.07) 94% 94.25%, transparent 94.25% 100%),
+        linear-gradient(to top, rgba(3,14,10,.88) 0 28%, transparent 28% 100%);
+      clip-path: polygon(0 100%,0 28%,4% 28%,4% 44%,8% 44%,8% 20%,12% 20%,12% 38%,15% 38%,15% 26%,20% 26%,20% 46%,23% 46%,23% 32%,27% 32%,27% 17%,31% 17%,31% 42%,35% 42%,35% 30%,39% 30%,39% 48%,44% 48%,44% 24%,48% 24%,48% 45%,52% 45%,52% 35%,56% 35%,56% 50%,61% 50%,61% 29%,65% 29%,65% 45%,69% 45%,69% 18%,73% 18%,73% 40%,77% 40%,77% 25%,81% 25%,81% 43%,85% 43%,85% 15%,89% 15%,89% 38%,93% 38%,93% 27%,97% 27%,97% 48%,100% 48%,100% 100%);
+      filter: drop-shadow(0 0 20px rgba(57,255,20,.18));
+    }
+
+    .matrix-rain,
+    .scan-lines,
+    .floor-glow {
+      position: fixed;
+      inset: 0;
       pointer-events: none;
     }
 
-    .wrap {
-      width: min(1120px, calc(100% - 40px));
+    .matrix-rain {
+      z-index: -3;
+      opacity: .30;
+      background-image:
+        repeating-linear-gradient(90deg, transparent 0 41px, rgba(57,255,20,.25) 42px, transparent 44px),
+        repeating-linear-gradient(180deg, rgba(57,255,20,.22) 0 2px, transparent 3px 24px);
+      mask-image: linear-gradient(to bottom, transparent 3%, #000 12%, transparent 55%);
+      animation: rain 18s linear infinite;
+    }
+
+    .scan-lines {
+      z-index: 50;
+      opacity: .13;
+      mix-blend-mode: screen;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,.08) 0 1px, transparent 1px 5px);
+    }
+
+    .floor-glow {
+      z-index: -2;
+      top: 44%;
+      background:
+        radial-gradient(ellipse at 50% 52%, rgba(57,255,20,.18), transparent 28%),
+        linear-gradient(180deg, transparent 0 34%, rgba(57,255,20,.10) 35%, transparent 36%, rgba(57,255,20,.05) 45%, transparent 60%),
+        repeating-linear-gradient(90deg, transparent 0 80px, rgba(57,255,20,.08) 81px, transparent 82px);
+      transform: perspective(700px) rotateX(62deg) scale(1.35) translateY(120px);
+      transform-origin: 50% 55%;
+      opacity: .72;
+    }
+
+    @keyframes rain {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 0 0, 0 600px; }
+    }
+
+    .page {
+      width: min(1220px, calc(100% - 36px));
       margin: 0 auto;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 48px 0;
       position: relative;
       z-index: 1;
     }
 
-    .card {
-      width: 100%;
-      border: 1px solid rgba(57, 255, 20, 0.35);
-      background: linear-gradient(180deg, rgba(9, 16, 13, 0.88), rgba(4, 7, 6, 0.82));
-      box-shadow: 0 0 45px rgba(57, 255, 20, 0.12), inset 0 0 38px rgba(57, 255, 20, 0.04);
-      border-radius: 28px;
-      padding: clamp(28px, 6vw, 72px);
-      text-align: center;
-      backdrop-filter: blur(12px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
+    .nav {
+      min-height: 88px;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      color: var(--green);
-      border: 1px solid rgba(57, 255, 20, 0.28);
-      background: rgba(57, 255, 20, 0.06);
-      padding: 10px 16px;
-      border-radius: 999px;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(57,255,20,.20);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+      min-width: 245px;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 48px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      color: #000;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.16em;
+      font-size: 24px;
+      text-shadow: none;
+      transform: skew(-10deg);
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 2px 0 0 0;
+      background: linear-gradient(135deg, var(--green), #1aa80a 60%, #c7ffc1);
+      clip-path: polygon(0 8%, 80% 8%, 100% 25%, 71% 25%, 78% 45%, 58% 45%, 44% 96%, 8% 83%, 22% 45%, 0 45%);
+      filter: drop-shadow(0 0 9px rgba(57,255,20,.6));
+    }
+
+    .brand-mark span {
+      z-index: 1;
+      color: #021004;
+      transform: skew(10deg);
+    }
+
+    .brand-copy strong,
+    .hero-logo .logo-title,
+    .footer-brand strong {
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      line-height: .92;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--green);
-      box-shadow: 0 0 18px var(--green);
-    }
-
-    h1 {
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: clamp(52px, 9vw, 112px);
-      line-height: 0.86;
-      margin: 30px 0 20px;
-      text-transform: uppercase;
-      letter-spacing: -0.045em;
-      text-shadow: 0 0 22px rgba(57, 255, 20, 0.15);
-    }
-
-    .silver {
-      background: linear-gradient(180deg, #ffffff 0%, #b9c2bc 45%, #747f78 100%);
+      letter-spacing: .03em;
+      background: linear-gradient(180deg, var(--silver-1) 0%, var(--silver-2) 46%, var(--silver-3) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 0 18px rgba(255,255,255,.12);
     }
 
-    .green { color: var(--green); }
-
-    .subhead {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: clamp(18px, 2.1vw, 24px);
-      line-height: 1.55;
-    }
-
-    .tiles {
-      margin: 42px auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 850px;
-    }
-
-    .tile {
-      padding: 22px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(207, 214, 209, 0.13);
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .tile strong {
+    .brand-copy span,
+    .footer-brand span {
       display: block;
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: 24px;
-      color: var(--silver);
+      margin-top: 1px;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 800;
+      letter-spacing: .36em;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      text-shadow: 0 0 12px rgba(57,255,20,.65);
     }
 
-    .tile span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 14px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(18px, 3vw, 38px);
+      flex: 1;
     }
 
-    .cta-row {
-      margin-top: 42px;
+    .nav-links a,
+    .social a {
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 15px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .nav-links a:first-child,
+    .nav-links a:hover,
+    .social a:hover { color: var(--green); text-shadow: 0 0 12px rgba(57,255,20,.65); }
+
+    .nav-links a:first-child { position: relative; }
+    .nav-links a:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -28px;
+      height: 2px;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+      min-width: 145px;
+    }
+
+    .social a {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .hero {
+      min-height: 800px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 70px 0 40px;
+    }
+
+    .hero-inner { width: 100%; }
+
+    .hero-logo { margin: 0 auto 36px; }
+
+    .hero-logo .ptg {
+      margin: 0 auto 16px;
+      width: min(410px, 78vw);
       display: flex;
       justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-size: clamp(76px, 12vw, 150px);
+      line-height: .78;
+      font-weight: 900;
+      letter-spacing: -.12em;
+      text-transform: uppercase;
+      filter: drop-shadow(0 0 22px rgba(57,255,20,.35));
     }
 
-    .button {
+    .ptg .p {
+      color: var(--green);
+      transform: skew(-13deg);
+      text-shadow: 0 0 18px rgba(57,255,20,.65);
+    }
+
+    .ptg .tg {
+      background: linear-gradient(180deg, #fff 0%, #d9dfdb 44%, #727a75 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transform: skew(-10deg);
+      text-shadow: 0 0 14px rgba(255,255,255,.18);
+    }
+
+    .hero-logo .logo-title {
+      display: block;
+      font-size: clamp(36px, 6vw, 76px);
+      letter-spacing: .03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-logo .logo-sub {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      font-size: clamp(23px, 3.8vw, 43px);
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgba(57,255,20,.7);
+    }
+
+    .hero-logo .logo-sub::before,
+    .hero-logo .logo-sub::after {
+      content: "";
+      width: clamp(34px, 8vw, 88px);
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--green));
+      box-shadow: 0 0 14px rgba(57,255,20,.8);
+    }
+
+    .hero-logo .logo-sub::after { background: linear-gradient(90deg, var(--green), transparent); }
+
+    .tagline {
+      margin: 0 0 40px;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 500;
+      font-size: clamp(15px, 2vw, 24px);
+      letter-spacing: clamp(.18em, .6vw, .42em);
+      text-transform: uppercase;
+      color: #f8fff7;
+      text-shadow: 0 0 18px rgba(255,255,255,.16);
+    }
+
+    .tagline span { color: var(--green); text-shadow: 0 0 13px rgba(57,255,20,.85); }
+
+    h1 {
+      margin: 0 auto 28px;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-size: clamp(58px, 10vw, 132px);
+      font-weight: 900;
+      line-height: .85;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      text-shadow:
+        0 0 8px rgba(57,255,20,.80),
+        0 0 28px rgba(57,255,20,.40),
+        0 0 72px rgba(57,255,20,.22);
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: min(870px, 86vw);
+      height: 2px;
+      margin: 26px auto 0;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      box-shadow: 0 0 16px rgba(57,255,20,.85);
+    }
+
+    .intro {
+      width: min(760px, 92vw);
+      margin: 0 auto;
+      color: #f4fff0;
+      font-size: clamp(19px, 2.4vw, 27px);
+      line-height: 1.28;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-shadow: 0 0 16px rgba(0,0,0,.95);
+    }
+
+    .almost {
+      margin: 28px 0 28px;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 700;
+      font-size: clamp(15px, 1.8vw, 22px);
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgba(57,255,20,.8);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 260px;
+      min-height: 64px;
+      padding: 0 34px;
+      color: var(--green);
       text-decoration: none;
-      color: #031004;
-      background: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-size: 18px;
       font-weight: 800;
-      padding: 15px 22px;
-      border-radius: 999px;
-      box-shadow: 0 0 22px rgba(57, 255, 20, 0.26);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(57,255,20,.08), rgba(57,255,20,.03));
+      box-shadow: inset 0 0 20px rgba(57,255,20,.06), 0 0 26px rgba(57,255,20,.12);
+      transition: .22s ease;
     }
 
-    .button.secondary {
-      color: var(--silver);
-      background: transparent;
-      border: 1px solid rgba(207, 214, 209, 0.22);
-      box-shadow: none;
+    .cta:hover {
+      transform: translateY(-2px);
+      background: var(--green);
+      color: #011005;
+      box-shadow: 0 0 30px rgba(57,255,20,.45);
+    }
+
+    .small-note {
+      margin: 19px 0 0;
+      color: #d1ddd0;
+      font-size: 18px;
+      letter-spacing: .02em;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 370px;
+      gap: 26px;
+      padding: 26px 0 48px;
+    }
+
+    .panel {
+      position: relative;
+      background: linear-gradient(180deg, rgba(5,16,12,.78), rgba(1,6,4,.82));
+      border: 1px solid rgba(57,255,20,.25);
+      box-shadow: inset 0 0 44px rgba(57,255,20,.045), 0 0 24px rgba(57,255,20,.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .panel::before,
+    .panel::after {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-color: var(--green);
+      border-style: solid;
+      opacity: .9;
+      pointer-events: none;
+      filter: drop-shadow(0 0 8px rgba(57,255,20,.65));
+    }
+
+    .panel::before {
+      top: -1px;
+      left: -1px;
+      border-width: 2px 0 0 2px;
+      clip-path: polygon(0 0, 100% 0, 100% 18%, 18% 18%, 18% 100%, 0 100%);
+    }
+
+    .panel::after {
+      bottom: -1px;
+      right: -1px;
+      border-width: 0 2px 2px 0;
+      clip-path: polygon(82% 0, 100% 0, 100% 100%, 0 100%, 0 82%, 82% 82%);
+    }
+
+    .expect {
+      padding: 48px 44px;
+      min-height: 360px;
+      background-image:
+        linear-gradient(rgba(57,255,20,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+      background-size: 40px 40px, 40px 40px, 100% 100%;
+    }
+
+    .section-title,
+    .side-title {
+      margin: 0 0 34px;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      font-size: 25px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #f5fff2;
+    }
+
+    .section-title span,
+    .side-title span { color: var(--green); margin-left: 12px; letter-spacing: .08em; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .feature {
+      min-height: 220px;
+      padding: 18px 26px 6px;
+      text-align: center;
+      border-right: 1px solid rgba(57,255,20,.18);
+    }
+
+    .feature:last-child { border-right: 0; }
+
+    .icon {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      filter: drop-shadow(0 0 12px rgba(57,255,20,.5));
+    }
+
+    .icon svg { width: 74px; height: 74px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+    .feature h3 {
+      margin: 0 0 13px;
+      color: var(--green);
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .feature p {
+      margin: 0;
+      color: #dce6db;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .side-panel {
+      padding: 45px 46px 42px;
+      min-height: 360px;
+      clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+    }
+
+    .side-panel p {
+      color: #e5eee2;
+      font-size: 18px;
+      line-height: 1.48;
+      margin: 0 0 26px;
+    }
+
+    .side-socials {
+      display: flex;
+      gap: 15px;
+      margin: 0 0 33px;
+    }
+
+    .side-socials a {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(57,255,20,.55);
+      border-radius: 8px;
+      color: var(--green);
+      text-decoration: none;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      box-shadow: inset 0 0 16px rgba(57,255,20,.04);
+    }
+
+    .contact-block {
+      border-top: 1px solid rgba(57,255,20,.24);
+      padding-top: 26px;
+    }
+
+    .contact-block h3 {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-size: 22px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .contact-block a {
+      color: #f4fff3;
+      text-decoration: none;
+      font-size: 18px;
+      word-break: break-word;
     }
 
     footer {
-      margin-top: 44px;
-      color: #7f8b81;
-      font-size: 14px;
+      padding: 0 0 44px;
+      text-align: center;
     }
 
-    @media (max-width: 720px) {
-      .tiles { grid-template-columns: 1fr; }
-      .card { border-radius: 22px; }
-      h1 { line-height: 0.94; }
+    .footer-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: 0 auto 22px;
+      color: var(--green);
+    }
+
+    .footer-rule::before,
+    .footer-rule::after {
+      content: "";
+      width: min(300px, 32vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green));
+      box-shadow: 0 0 12px rgba(57,255,20,.55);
+    }
+
+    .footer-rule::after { background: linear-gradient(90deg, var(--green), transparent); }
+
+    .footer-mini-mark {
+      width: 58px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      font-family: Orbitron, Rajdhani, sans-serif;
+      font-weight: 900;
+      color: #031004;
+      background: linear-gradient(135deg, var(--green), #187c0d 70%, #caffc2);
+      clip-path: polygon(0 8%, 82% 8%, 100% 28%, 72% 28%, 80% 46%, 57% 46%, 44% 96%, 8% 83%, 22% 46%, 0 46%);
+      filter: drop-shadow(0 0 13px rgba(57,255,20,.55));
+      transform: skew(-10deg);
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: .36em;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand span {
+      font-size: 13px;
+      letter-spacing: .44em;
+      margin-bottom: 18px;
+    }
+
+    .copyright {
+      color: var(--muted-2);
+      font-size: 14px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1020px) {
+      .nav { padding: 16px 0; flex-wrap: wrap; }
+      .brand, .social { min-width: auto; }
+      .nav-links { order: 3; flex-basis: 100%; padding: 12px 0 0; flex-wrap: wrap; }
+      .nav-links a:first-child::after { bottom: -10px; }
+      .content-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .feature:nth-child(2) { border-right: 0; }
+      .feature:nth-child(1), .feature:nth-child(2) { border-bottom: 1px solid rgba(57,255,20,.18); }
+      .side-panel { clip-path: none; }
+    }
+
+    @media (max-width: 650px) {
+      .page { width: min(100% - 22px, 1220px); }
+      .nav { min-height: auto; }
+      .brand-copy strong { font-size: 20px; }
+      .brand-copy span { font-size: 10px; letter-spacing: .28em; }
+      .brand-mark { width: 48px; height: 41px; }
+      .social { display: none; }
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: 13px; }
+      .hero { min-height: 690px; padding-top: 54px; }
+      h1 { font-size: clamp(46px, 13.5vw, 78px); letter-spacing: .02em; }
+      .tagline { letter-spacing: .18em; }
+      .intro { font-size: 18px; }
+      .cta { min-width: 220px; min-height: 58px; }
+      .expect { padding: 34px 22px; }
+      .features { grid-template-columns: 1fr; }
+      .feature { border-right: 0; border-bottom: 1px solid rgba(57,255,20,.18); padding: 25px 14px; }
+      .feature:last-child { border-bottom: 0; }
+      .side-panel { padding: 34px 24px; }
+      .side-socials a { width: 54px; height: 54px; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card" aria-label="Prime Time Gaming coming soon placeholder">
-      <div class="eyebrow"><span class="dot"></span> Official Site Coming Soon</div>
-      <h1><span class="silver">Prime Time</span><br><span class="green">Gaming</span></h1>
-      <p class="subhead">
-        Events, tournaments, community nights, brackets, standings, and player registration are being built for primetimegaming.net.
-      </p>
+  <div class="matrix-rain"></div>
+  <div class="floor-glow"></div>
+  <div class="scan-lines"></div>
 
-      <div class="tiles">
-        <div class="tile">
-          <strong>Events</strong>
-          <span>Upcoming local and online gaming events</span>
+  <div class="page">
+    <header class="nav" aria-label="Site navigation">
+      <a class="brand" href="#top" aria-label="Prime Time Gaming home">
+        <div class="brand-mark"><span>PTG</span></div>
+        <div class="brand-copy">
+          <strong>Prime Time</strong>
+          <span>Gaming</span>
         </div>
-        <div class="tile">
-          <strong>Tournaments</strong>
-          <span>Registration, brackets, prizes, and standings</span>
-        </div>
-        <div class="tile">
-          <strong>Community</strong>
-          <span>Players, collectors, competitors, and fans</span>
-        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#events">Events</a>
+        <a href="#events">Tournaments</a>
+        <a href="#events">Rankings</a>
+        <a href="#events">About</a>
+        <a href="mailto:info@primetimegaming.net">Contact</a>
+      </nav>
+
+      <div class="social" aria-label="Social links">
+        <a href="#" aria-label="Discord">DC</a>
+        <a href="#" aria-label="Twitch">TW</a>
+        <a href="#" aria-label="X">X</a>
       </div>
+    </header>
 
-      <div class="cta-row">
-        <a class="button" href="mailto:info@primetimegaming.net">Contact Prime Time Gaming</a>
-        <a class="button secondary" href="#">Tournament Hub In Progress</a>
+    <main id="top">
+      <section class="hero" aria-label="Prime Time Gaming coming soon">
+        <div class="hero-inner">
+          <div class="hero-logo" aria-label="Prime Time Gaming logo treatment">
+            <div class="ptg" aria-hidden="true"><span class="p">P</span><span class="tg">TG</span></div>
+            <span class="logo-title">Prime Time</span>
+            <span class="logo-sub">Gaming</span>
+          </div>
+
+          <p class="tagline">Compete. Connect. <span>Dominate.</span></p>
+          <h1>Coming Soon</h1>
+
+          <p class="intro">
+            A new era of competitive gaming is on the horizon.<br>
+            Tournaments. Community. Legends.
+          </p>
+
+          <p class="almost">Prime Time is almost here.</p>
+
+          <a class="cta" href="mailto:info@primetimegaming.net?subject=Prime%20Time%20Gaming%20Updates">
+            <span aria-hidden="true">✉</span> Notify Me
+          </a>
+          <p class="small-note">Be the first to know about launch updates, events, and more.</p>
+        </div>
+      </section>
+
+      <section id="events" class="content-grid" aria-label="What to expect and contact information">
+        <div class="panel expect">
+          <h2 class="section-title">What To Expect <span>////</span></h2>
+          <div class="features">
+            <article class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M17 10h30v8h8v6c0 9-7 16-16 16h-1c-2 5-5 8-6 8s-4-3-6-8h-1c-9 0-16-7-16-16v-6h8z"/><path d="M24 54h16M28 48h8M17 18v10M47 18v10"/></svg>
+              </div>
+              <h3>Tournaments</h3>
+              <p>Epic events across multiple games with real prize pools.</p>
+            </article>
+
+            <article class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="9"/><circle cx="17" cy="28" r="7"/><circle cx="47" cy="28" r="7"/><path d="M16 48c2-9 9-14 16-14s14 5 16 14M5 49c1-8 6-12 12-12M59 49c-1-8-6-12-12-12"/></svg>
+              </div>
+              <h3>Community</h3>
+              <p>A home for competitive players, collectors, and fans.</p>
+            </article>
+
+            <article class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M10 51h14V31H10zM25 51h14V17H25zM40 51h14V27H40z"/><path d="M31 11h2M30 7h4M17 26h2M46 22h2"/></svg>
+              </div>
+              <h3>Rankings</h3>
+              <p>Track your progress. Climb the leaderboard. Earn your legacy.</p>
+            </article>
+
+            <article class="feature">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M32 6l22 9v14c0 14-9 24-22 29C19 53 10 43 10 29V15z"/><path d="M22 32l7 7 15-17"/></svg>
+              </div>
+              <h3>Fair Play</h3>
+              <p>Built on integrity, respect, and a passion for the game.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="panel side-panel">
+          <h2 class="side-title">Stay Connected <span>////</span></h2>
+          <p>Join our community and follow us on socials for the latest news and updates.</p>
+
+          <div class="side-socials" aria-label="Social links">
+            <a href="#" aria-label="Discord">DC</a>
+            <a href="#" aria-label="Twitch">TW</a>
+            <a href="#" aria-label="X">X</a>
+          </div>
+
+          <div class="contact-block">
+            <h3>Contact</h3>
+            <a href="mailto:info@primetimegaming.net">✉ info@primetimegaming.net</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-rule"><div class="footer-mini-mark">PTG</div></div>
+      <div class="footer-brand">
+        <strong>Prime Time Gaming</strong>
+        <span>Compete. Connect. Dominate.</span>
       </div>
-
-      <footer>
-        primetimegaming.net · Built for the next era of competitive events
-      </footer>
-    </section>
-  </main>
+      <div class="copyright">© 2026 Prime Time Gaming. All rights reserved.</div>
+    </footer>
+  </div>
 </body>
 </html>
